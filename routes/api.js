@@ -16,5 +16,34 @@ router.get('/', function (req, res, next) {
     // res.render('index');
 });
 
+router.get('/new', function (req, res, next) {
+
+
+    emergencyDB.insertDataIntoemergency(req.query.name.toString(),
+        req.query.time.toString(),
+        req.query.location.toString(),
+        function (err, result) {
+            console.log(result);
+            res.send(result);
+        })
+
+
+});
+
+router.get('/delete',function (req,res,next)     {
+emergencyDB.deletebyId(req.query.id.toString(),function (err, result) {
+   console.log(result);
+});
+    emergencyDB.getAllData(function (err, result) {
+        console.log("-----------");
+
+
+        res.locals.resArr = result;
+        res.redirect("/")
+        // console.log(res);
+    });
+
+});
+
 
 module.exports = router;
