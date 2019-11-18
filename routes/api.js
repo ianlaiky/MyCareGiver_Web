@@ -6,9 +6,9 @@ var emergencyDB = require("../config/emergency");
 /* GET users listing. */
 router.get('/', function (req, res, next) {
     res.locals.title = "hello";
-    emergencyDB.getAllData(function (err, res) {
+    emergencyDB.getAllData(function (err, result) {
 
-        res.send(res);
+        res.send(result);
         // console.log(res);
     });
 
