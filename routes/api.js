@@ -18,14 +18,15 @@ router.get('/', function (req, res, next) {
 
 router.get('/new', function (req, res, next) {
 
-res.send(req.query);
-    // emergencyDB.insertDataIntoemergency(req.query.name.toString(),
-    //     req.query.time.toString(),
-    //     req.query.location.toString(),
-    //     function (err, result) {
-    //         console.log(result);
-    //         res.send(result);
-    //     })
+
+    emergencyDB.insertDataIntoemergency(req.query.name.toString(),
+        req.query.name.toString(),
+        req.query.time.toString(),
+        req.query.location.toString(),
+        function (err, result) {
+            console.log(result);
+            res.send(result);
+        })
 
 
 });
