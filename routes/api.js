@@ -19,7 +19,8 @@ router.get('/', function (req, res, next) {
 router.get('/new', function (req, res, next) {
 
 
-    emergencyDB.insertDataIntoemergency(req.query.name.toString(),
+    emergencyDB.insertDataIntoemergency(
+
         req.query.name.toString(),
         req.query.time.toString(),
         req.query.location.toString(),
